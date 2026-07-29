@@ -15,6 +15,12 @@ public class ProductServiceIMPL implements ProductServices {
 		
 		productdao.createProduct(new Product(product.getProductcode(),product.getProductName(),product.getProductdescription(),product.getActivationDate(),product.getExpiryDate()));
 	}
+
+	@Override
+	public void updateProduct(String code, String name) {
+		// TODO Auto-generated method stub
+		productdao.updateProduct(code,name);
+	}
 	
 	
 	
