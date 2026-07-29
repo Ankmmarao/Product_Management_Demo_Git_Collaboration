@@ -26,7 +26,7 @@ public class ConnectionPool {
 			datasource.setInitialPoolSize(5);
 			datasource.setMinPoolSize(5);
 			datasource.setAcquireIncrement(5);
-			datasource.setMaxPoolSize(5);
+			datasource.setMaxPoolSize(20);
 		}
 		catch(IOException | PropertyVetoException e) {
 			System.out.println(e.getMessage());
