@@ -42,7 +42,13 @@ public class ProductUtility {
                     break;
 
                 case 3:
-                    updateProduct();
+                	System.out.println("Enter Product Code");
+                    String code = input.next();
+
+                    System.out.println("Enter Product Name");
+                    String name = input.next();
+                    
+                    updateProduct(code,name);
                     break;
 
                 case 4:
@@ -107,13 +113,8 @@ public class ProductUtility {
     }
 
 
-    private static void updateProduct() {
-    	System.out.println("Enter Product Code");
-        String code = input.next();
-
-        System.out.println("Enter Product Name");
-        String name = input.next();
-        
+    private static void updateProduct(String code,String name) {
+    	
         productServices.updateProduct(code,name);
         
     }
