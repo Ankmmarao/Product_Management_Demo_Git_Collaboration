@@ -36,7 +36,7 @@ public class ProductUtility {
                 
 
                 case 3:
-                    getProduct();
+                    getProduct("77YHFC");
                     break;
 
                 case 4:
@@ -57,8 +57,12 @@ public class ProductUtility {
         }
     }
 
+    private static void getProduct(String productCode) {
+    	productServices.getProduct(productCode);
+	}
 
-    private static void saveProduct() {
+
+	private static void saveProduct() {
 
         System.out.println("Enter Product Code");
         String code = input.next();
@@ -91,12 +95,7 @@ public class ProductUtility {
 
    
 
-    private static void getProduct() {
-
-      
-    }
-
-
+   
     private static void deleteProduct() {
 
       

@@ -5,6 +5,8 @@ import java.util.List;
 public interface ProductServices {
 
   void createProduct(Product product);
+
+  Product getProduct(String productCode);
   
   
 }
