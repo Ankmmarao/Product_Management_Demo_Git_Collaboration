@@ -35,19 +35,21 @@ public class ProductUtility {
 
                 
 
-                case 3:
-                    getProduct("POO1");
+                case 2:
+                	System.out.println("Enter the Product ID:");
+                	String id=input.next();
+                    getProduct(id);
                     break;
 
-                case 4:
+                case 3:
                     updateProduct();
                     break;
 
-                case 5:
+                case 4:
                     deleteProduct();
                     break;
 
-                case 6:
+                case 5:
                     System.out.println("Application Closed");
                     System.exit(0);
 
@@ -97,8 +99,10 @@ public class ProductUtility {
 
    
     private static void deleteProduct() {
-
-      
+    	System.out.println("Enter the product code that you want to delete.");
+    	String productCode=input.next();
+    	productServices.deleteProduct(productCode);
+    	
     }
 
 

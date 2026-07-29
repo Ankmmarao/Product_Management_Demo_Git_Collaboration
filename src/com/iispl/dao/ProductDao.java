@@ -10,9 +10,12 @@ public interface ProductDao {
 	
 	public void createProduct(Product product);
 
+
 	public Product getProduct(String productCode);
 
 	public void updateProduct(String code, String name);
+
+	public void deleteProduct(String productCode);
 
 	
 }
