@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class ConnectionPool {

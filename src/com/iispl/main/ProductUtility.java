@@ -98,8 +98,10 @@ public class ProductUtility {
 
 
     private static void deleteProduct() {
-
-      
+    	System.out.println("Enter the product code that you want to delete.");
+    	String productCode=input.next();
+    	ProductServices.deleteProduct(productCode);
+    	
     }
 
 

@@ -5,6 +5,8 @@ import java.util.List;
 public interface ProductServices {
 
   void createProduct(Product product);
+
+  public void deleteProduct(String productCode);
   
   
 }

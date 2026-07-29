@@ -2,6 +2,8 @@ package com.iispl.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import javax.sql.DataSource;
 
 import com.iispl.connectionpool.ConnectionPool;
@@ -20,8 +22,9 @@ public class ProductDaoIMPL implements ProductDao {
         try {
             DataSource ds = ConnectionPool.getDataSource();
 
-            try (Connection connection = ds.getConnection();
-                 PreparedStatement pstmt = connection.prepareStatement(insertQuery)) {
+            try (
+            	Connection connection = ds.getConnection();
+                PreparedStatement pstmt = connection.prepareStatement(insertQuery)) {
 
                 pstmt.setString(1, product.getProductcode());
                 pstmt.setString(2, product.getProductName());
@@ -42,4 +45,31 @@ public class ProductDaoIMPL implements ProductDao {
             e.printStackTrace();
         }
     }
+
+	@Override
+	public void deleteProduct(String productCode) {
+		String deleteQuery ="delete from product where productCode=?"; 
+		try {
+            DataSource ds = ConnectionPool.getDataSource();
+    
+            try {
+            	Connection connection = ds.getConnection();
+                PreparedStatement pstmt = connection.prepareStatement(deleteQuery) ;
+                pstmt.setString(1,productCode);
+                int rowsAffected = pstmt.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("Product deleted successfully.");
+                } else {
+                    System.out.println("No product found with code: " + productCode);
+                }
+
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+		
+		}catch (Exception e) {
+            e.printStackTrace();
+        }
+	}
 }
