@@ -2,7 +2,10 @@ package com.iispl.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
+
+import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
@@ -43,6 +46,7 @@ public class ProductDaoIMPL implements ProductDao {
             e.printStackTrace();
         }
     }
+
 
 
     @Override
@@ -97,4 +101,33 @@ public class ProductDaoIMPL implements ProductDao {
 
         return product;
     }
+
+	@Override
+	public void updateProduct(String code, String name) {
+		// TODO Auto-generated method stub
+		Connection connection = null;
+		String updateSQL="update Product set productName = ? where productcode = ?";
+		PreparedStatement prepStmt=null;
+		try {
+			DataSource ds=ConnectionPool.getDataSource();
+			connection = ds.getConnection();
+			prepStmt=connection.prepareStatement(updateSQL);
+			prepStmt.setString(1, name);
+			prepStmt.setString(2, code);
+			int rows = prepStmt.executeUpdate();
+			if(rows>0) {
+				System.out.println(rows+" updated");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+		    try {
+		        if (connection != null) {
+		            connection.close();
+		        }
+		    } catch (SQLException e) {
+		        e.printStackTrace();
+		    }
+		}
+	}
 }

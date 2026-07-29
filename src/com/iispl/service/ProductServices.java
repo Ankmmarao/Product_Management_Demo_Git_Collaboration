@@ -6,7 +6,11 @@ public interface ProductServices {
 
   void createProduct(Product product);
 
+
   Product getProduct(String productCode);
+
+  void updateProduct(String code, String name);
+
   
   
 }

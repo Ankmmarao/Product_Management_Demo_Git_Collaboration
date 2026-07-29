@@ -103,7 +103,13 @@ public class ProductUtility {
 
 
     private static void updateProduct() {
+    	System.out.println("Enter Product Code");
+        String code = input.next();
 
+        System.out.println("Enter Product Name");
+        String name = input.next();
+        
+        productServices.updateProduct(code,name);
         
     }
 }
