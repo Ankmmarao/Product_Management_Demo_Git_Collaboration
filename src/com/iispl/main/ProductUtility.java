@@ -36,7 +36,7 @@ public class ProductUtility {
                 
 
                 case 3:
-                    getProduct("77YHFC");
+                    getProduct("POO1");
                     break;
 
                 case 4:

@@ -10,14 +10,13 @@ public interface ProductDao {
 	
 	public void createProduct(Product product);
 
-<<<<<<< HEAD
 	public Product getProduct(String productCode);
-=======
+
 	public void updateProduct(String code, String name);
->>>>>>> origin/update-product
+
 	
 }
-X
+
 
 
 
