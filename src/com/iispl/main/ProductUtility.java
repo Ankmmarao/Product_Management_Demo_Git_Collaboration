@@ -46,7 +46,9 @@ public class ProductUtility {
                     break;
 
                 case 4:
-                    deleteProduct();
+                	System.out.println("Enter the product code: ");
+                	String productCode=input.next();
+                    deleteProduct(productCode);
                     break;
 
                 case 5:
@@ -98,9 +100,8 @@ public class ProductUtility {
    
 
    
-    private static void deleteProduct() {
-    	System.out.println("Enter the product code that you want to delete.");
-    	String productCode=input.next();
+    private static void deleteProduct(String productCode) {
+    	
     	productServices.deleteProduct(productCode);
     	
     }
