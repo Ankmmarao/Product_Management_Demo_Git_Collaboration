@@ -42,6 +42,7 @@ public class ProductUtility {
                     break;
 
                 case 3:
+                	System.out.println("Welcome to the Update Functionality");
                 	System.out.println("Enter Product Code");
                     String code = input.next();
 
@@ -79,9 +80,9 @@ public class ProductUtility {
 
         System.out.println("Enter Product Name");
         String name = input.next();
-
+        input.nextLine();
         System.out.println("Enter Description");
-        String description = input.next();
+        String description = input.nextLine();
 
         System.out.println("Enter Activation Date (yyyy-MM-dd)");
         LocalDate activationDate = LocalDate.parse(input.next());
