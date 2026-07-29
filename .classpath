@@ -6,8 +6,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="/home/iispl/Downloads/c3p0-0.14.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="/home/iispl/Downloads/mchange-commons-java-0.6.1.jar"/>
-	<classpathentry kind="lib" path="/home/iispl/Downloads/postgresql-42.7.12.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/iispl/Downloads/postgresql-42.7.12.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/iispl/Downloads/mchange-commons-java-0.5.0.jar"/>
+	<classpathentry kind="lib" path="/home/iispl/Downloads/c3p0-0.9.1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
